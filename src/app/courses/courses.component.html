@@ -1,0 +1,94 @@
+<div class="home">
+  <div class="breadcrumbs_container">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <ul class="breadcrumbs_list d-flex flex-row align-items-center justify-content-start">
+            <li><a href="index.html">home</a></li>
+            <li><a href="courses.html">courses</a></li>
+            <li>english</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Language -->
+
+<div class="language">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="language_title">List Of Universities</div>
+      </div>
+    </div>
+    <div class="row">
+      <div style="display: flex;justify-content: center;padding-top:3%;" class="col" >
+            <div style="padding:0 4%" class="owl-item language_item">
+                <div class="lang_name">
+                    <div style="font-size:150%;" class="rs-select2--light rs-select2--lg">
+                        <select (click)="selectedcount($event)" [(ngModel)]="selectedcountry" class="js-select2" name="fees">
+                           <option value="">Select Your Country of Choice</option>
+                            <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+                        </select>
+                    </div>
+                    <div style="font-size:150%;" class="rs-select2--light rs-select2--lg">
+                      <select (click)="selectedcour($event)" [(ngModel)]="selectedcourse" class="js-select2" name="fees">
+                         <option value="">Select Your Course of Your choice Choice</option>
+                          <option *ngFor="let course of courses" value="{{course}}">{{course}}</option>
+                      </select>
+                      <button (click)="apply()" style="background: rgb(0,172,172);font-size: 100%">Apply</button>
+                      <button (click)="reset()" style="background: rgb(0,172,172);font-size: 100%">Reset</button>
+                  </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Courses -->
+
+<div class="courses">
+  <div class="container">
+    <div class="row courses_row">
+
+      <!-- Course -->
+      <div *ngFor = "let list of universitydata"class="col-lg-4 course_col">
+        <div class="course">
+          <div class="course_image"><img src="{{list.imageUrl}}" alt=""></div>
+          <div class="course_body">
+            <div class="course_title"><a (click)="knowmore(list.id,list.imageUrl)">{{list.name}}</a></div>
+            <div class="course_info">
+              <ul>
+                <li><a href="#">{{list.location}}</a></li>
+                <li><a>{{list.ranking}}</a></li>
+              </ul>
+            </div>
+            <div class="course_text">
+              <p>{{list.desc}}</p>
+            </div>
+          </div>
+          <div class="course_footer d-flex flex-row align-items-center justify-content-start">
+            <div class="course_students"><i class="fa fa-user" aria-hidden="true"></i><span>10</span></div>
+            <div class="course_rating ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
+            <div class="course_mark course_free trans_200"><a (click)="knowmore(list.id,list.imageUrl)">Know More..</a></div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <!-- Course -->
+  
+
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <!-- <div class="load_more_button"><a href="#">load more</a></div> -->
+      </div>
+    </div>
+  </div>
+</div>

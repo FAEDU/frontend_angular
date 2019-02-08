@@ -1,0 +1,318 @@
+<!-- <div *ngIf = "showPage"> -->
+
+
+	<div class="home">
+		<div class="home_background" style="background-image: url(assets/images/index_background.jpg);"></div>
+		<div class="home_content">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<h1 class="home_title text-left" style="color:#fff;">BETTER EDUCATION,<br> BETTER WORLD !</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+  
+  <div class="courses">
+		<div class="courses_background"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h2 class="section_title text-center">Popular Plans</h2>
+				</div>
+			</div>
+			<div class="row courses_row">
+
+				<!-- Course -->
+				<div class="col-lg-4 course_col">
+					<div class="course">
+						<div class="course_image"><img src="assets/images/course_2.jpg" alt=""></div>
+						<div class="course_body">
+							<div style="border-bottom:1px solid grey;" class="course_info">
+								<h3 style="color:black">Statement of Purpose</h3>
+								<h6 style="color:black;">
+									Get your SOP drafted by our international expert writers
+									Valid for 3 months
+								</h6>
+							</div>
+						</div>
+						<div class="course_footer d-flex flex-row align-items-center justify-content-start">
+							<div class="course_rating ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
+							<div style="text-color:white;" class="course_mark course_free trans_200"><p style="color:white;">₹ 4999</p></div>
+						</div>
+					</div>
+				</div>
+				<!-- Course -->
+	
+				<!-- Course -->
+				<div class="col-lg-4 course_col">
+					<div class="course">
+						<div class="course_image"><img src="assets/images/course_2.jpg" alt=""></div>
+						<div class="course_body">
+							<div style="border-bottom:1px solid grey;" class="course_info">
+								<h3 style="color:black">Full Package for MBA</h3>
+								<h6 style="color:black;">
+									Complete guidance with document and mentorship support.
+									Valid for 6 months
+								</h6>
+							</div>
+						</div>
+						<div class="course_footer d-flex flex-row align-items-center justify-content-start">
+							<div class="course_rating ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
+							<div class="course_mark course_free trans_200"><p style="color:white;">₹ 29999</p></div>
+						</div>
+					</div>
+				</div>
+	
+				<!-- Course -->
+				<div class="col-lg-4 course_col">
+					<div class="course">
+						<div class="course_image"><img src="assets/images/course_2.jpg" alt=""></div>
+						<div class="course_body">
+							<div style="border-bottom:1px solid black;" class="course_info">
+								<h3 style="color:black">Personalized LORs
+								</h3>
+								<h6 style="color:black;">
+									Get your LORs drafted for a professional outlook.
+									Valid for 3 months
+								</h6>
+							</div>
+						</div>
+						<div class="course_footer d-flex flex-row align-items-center justify-content-start">
+							<div class="course_rating ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
+							<div style="text-color:white;" class="course_mark course_free trans_200"><p style="color:white;">₹ 1999</p></div>
+						</div>
+						
+					</div>
+				</div>
+				<!-- Course -->
+				
+				
+				
+	
+				<!-- Course -->
+	
+				<!-- Course -->
+				
+	
+				<!-- Course -->
+				
+	</div><br><br>
+	<a href="/plansandpricing"><h3 style="text-align: center">Know More</h3></a>
+
+	<!-- Instructors -->
+
+	
+
+	<!-- Register -->
+
+	<div class="register">
+		<div class="container">
+			<div class="row">
+
+				<!-- Register Form -->
+
+				<div class="col-lg-6">
+					<div class="register_form_container">
+						<div class="register_form_title">Find out your Dream College!</div>
+						<form #homeForm = "ngForm" novalidate id="register_form" class="register_form">
+							<div class="row register_row">
+								<div class="col-lg-6 register_col">
+									<input type="text" class="form_input" name ="name" [(ngModel)]="detail.name" placeholder="Name" #name="ngModel" required>
+									<!-- <div *ngIf="name.errors?.required && name.touched" class="error ">
+										Please enter name.
+									  </div> -->
+								</div>
+								<div class="col-lg-6 register_col">
+									<input type="email" class="form_input" name ="email" [(ngModel)]="detail.emailID" placeholder="Email" #email="ngModel"  required>
+									<!-- <div *ngIf="email.errors?.required && email.touched" class="error ">
+										Please enter email.
+									  </div> -->
+								</div>
+								<div class="col-lg-6 register_col">
+									<input type="tel" class="form_input" [(ngModel)]="detail.query" name ="query" placeholder="Phone" #phone="ngModel" required>
+									<!-- <div *ngIf="phone.errors?.required && phone.touched" class="error ">
+										Please enter phone.
+									  </div> -->
+								</div>
+								<div class="col">
+									<button type="submit"  [disabled]="!homeForm.form.valid" (click)="submit()" class="form_button trans_200">find out now</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<!-- Register Timer -->
+
+				<div class="col-lg-6">
+					<div class="register_timer_container">
+						<div class="register_timer_title">Your Score. Your College.</div>
+						<div class="register_timer_text">
+							<p>Predict where you'll land with your score with our Prediction Meter. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+						</div>
+						<!--<div class="timer_container">
+							<ul class="timer_list">
+								<li><div id="day" class="timer_num">00</div><div class="timer_ss">days</div></li>
+								<li><div id="hour" class="timer_num">00</div><div class="timer_ss">hours</div></li>
+								<li><div id="minute" class="timer_num">00</div><div class="timer_ss">minutes</div></li>
+								<li><div id="second" class="timer_num">00</div><div class="timer_ss">seconds</div></li>
+							</ul>
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Events -->
+
+	<div class="events">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h2 class="section_title text-center">Upcoming Events</h2>
+				</div>
+			</div>
+			<div class="row events_row" >
+
+				<!-- Event -->
+				<div class="col-lg-4 event_col"*ngFor="let event of events">
+					<div class="event">
+						<div class="event_image"><img src="{{event.image}}" alt=""></div>
+						<div sty class="event_date d-flex flex-column align-items-center justify-content-center">
+							<div class="event_day"><h6 style="font-size: 38%;">{{event.Date}}</h6></div>
+							<div class="event_month"><h6 style="font-size: 120%;">{{event.Time}}</h6></div>
+						</div>
+						<div class="event_body d-flex flex-row align-items-center justify-content-start">
+							<div class="event_title">{{event.name}}</div>
+							<div (click)="eventclicked(event.Desc,event.name,event.Time,event.Date)" class="event_tag ml-auto"><a data-toggle="modal" data-target="#largeModal"><div style="padding:0 6%;font-size: 150%">+</div></a></div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Blog -->
+
+	<div class="blog">
+		<div class="container">
+			<div class="row row-lg-eq-height">
+
+				<!-- Blog Left -->
+				<div class="col-lg-6">
+					<div class="blog_left">
+						<div class="blog_title">From Our Services</div>
+						<div class="blog_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+						</div>
+						<div class="blog_categories">
+							<div class="row categories_row">
+
+								<!-- Category -->
+								<div class="col-md-4 blog_category_col">
+									<a href="blog.html">
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_1.jpg" alt=""></div>
+											<div class="blog_category_title">MBA</div>
+										</div>
+									</a>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-4 blog_category_col">
+									<a href="blog.html">
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_2.jpg" alt=""></div>
+											<div class="blog_category_title">FOREX</div>
+										</div>
+									</a>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-4 blog_category_col">
+									<a href="blog.html">
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_3.jpg" alt=""></div>
+											<div class="blog_category_title">MASTERS</div>
+										</div>
+									</a>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-4 blog_category_col">
+									<a href="blog.html">
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_4.jpg" alt=""></div>
+											<div class="blog_category_title">VISA</div>
+										</div>
+									</a>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-4 blog_category_col">
+									<a href="blog.html">
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_5.jpg" alt=""></div>
+											<div class="blog_category_title">USA</div>
+										</div>
+									</a>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-4 blog_category_col">
+									<a href="blog.html">
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_6.jpg" alt=""></div>
+											<div class="blog_category_title">MS</div>
+										</div>
+									</a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Blog Right -->
+
+				<div class="col-lg-6">
+					<div class="blog_right">
+						<div class="blog_image" style="background-image:url(assets/images/blog_7.jpg)"></div>
+						<div class="blog_title_container">
+							<div class="blog_right_category"><a href="#">MBA</a></div>
+							<div class="blog_right_title"><a href="blog_single.html">MBA in USA!</a></div>
+							<div class="blog_right_text">
+								<p>Whether it is a signup flow, a multi-view stepper, or a monotonous data entry interface, forms are one of the most important components of digital product design.</p>
+							</div>
+							<div class="read_more"><a href="blog_single.html">Read More <img src="assets/images/right.png" alt=""></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- </div> -->
+
+<div style="margin-top:13%;" class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+					<h3 style="text-align: center;" class="modal-title" id="largeModalLabel">{{Name}}</h3>
+					<div class="modal-body" id="largeModalLabel">
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Description</h5>
+					<p style="text-align: center;font-size:120%; ">{{desc}}</p>
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Date</h5>
+					<p style="text-align: center">{{date}}</p>
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Time</h5>
+					<p style="text-align: center;font-size:120%; ">{{time}}</p>
+				</div>
+				<div class="modal-footer">
+					<button id="closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
