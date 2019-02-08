@@ -44,6 +44,7 @@ export class SopresumelorComponent implements OnInit {
     })
   }
   resumechange(e) {
+    console.log("yey")
     this.Resumefile=e.target.files[e.target.files.length-1];
     this.service.geturlofFile(this.Resumefile).subscribe(res => {
       this.details.resumelink= res.split('**')[0];
@@ -52,6 +53,16 @@ export class SopresumelorComponent implements OnInit {
   }
 
   uploadfiles(){
+    console.log(this.details);
+      if(this.details.soplink!=='NA'){
+        this.isuploadedsop=false;
+      }
+      if(this.details.lorlink!=='NA'){
+        this.isuploadedlor=false;
+      }
+      if(this.details.resumelink!=='NA'){
+        this.isuploadedresume=false;
+      }
         this.details.Name=localStorage.getItem('name');
         this.details.S_ID=localStorage.getItem('id');
         this.service.sendfileUrl(this.details).subscribe(res => {
