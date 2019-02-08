@@ -48,7 +48,7 @@ export class ResetpassComponent implements OnInit , OnDestroy{
         this.response=res;
         console.log(this.response);
         console.log(this.response.password);
-        this.detailS.Name=this.response.name;
+        this.detailS.Name=this.response.Name;
         this.detailS.email=this.response.email;
         this.detailS.Password=this.epassword;
         console.log(this.detailS);
@@ -63,7 +63,7 @@ export class ResetpassComponent implements OnInit , OnDestroy{
         this.response=res;
         console.log(this.response);
         console.log(this.response.password);
-        this.detailM.Name=this.response.name;
+        this.detailM.Name=this.response.Name;
         this.detailM.email=this.response.email;
         this.detailM.Password=this.epassword;
         console.log(this.detailM);
