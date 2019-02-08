@@ -44,7 +44,7 @@ export class SopresumelorComponent implements OnInit {
     })
   }
   resumechange(e) {
-    console.log("yey")
+    //console.log("yey")
     this.Resumefile=e.target.files[e.target.files.length-1];
     this.service.geturlofFile(this.Resumefile).subscribe(res => {
       this.details.resumelink= res.split('**')[0];

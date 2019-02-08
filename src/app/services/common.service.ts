@@ -65,7 +65,7 @@ export class CommonService {
 
     reset(email,string){
         console.log(email);
-       return this.http.get(`https://frozen-everglades-82431.herokuapp.com/reset/${string}/${email}`);
+       return this.http.get(`https://secret-atoll-46665.herokuapp.com/reset/${string}/${email}`);
     }
 
     studentRegistration(details)
