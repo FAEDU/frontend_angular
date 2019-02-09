@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { Response} from '@angular/http';
 import { CommonService, LoaderService } from '../services/common.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   "password": ""
   // "emailVerified": true
   };
-  constructor(private service:CommonService,private commonService : CommonService, private router : Router, private loaderService: LoaderService) {
+  constructor(private http:HttpClient,private service:CommonService,private commonService : CommonService, private router : Router, private loaderService: LoaderService) {
     this.commonService.showHeadernFooter(false);
    }
 
@@ -34,25 +34,56 @@ export class LoginComponent implements OnInit, OnDestroy {
 
    reset(){
      if(this.router.url==="/login/student"){
+    this.http.get(`https://arcane-ocean-14843.herokuapp.com/api/UserSignUps/findOne?filter={%22where%22:{%22email%22:%22${this.details.email}%22}}`)
+    .subscribe((res)=>{
+      if(this.router.url==="/login/student"){
+        if(this.details.email===""){
+          alert("Give emailId to reset your password");
+          return;
+        }
+      console.log(this.details.email,"student")
+      this.service.reset(this.details.email,"student").subscribe(res=>{
+      })
+      alert("Verification Link is sent to your EmailId")
+     }
+     else{
        if(this.details.email===""){
          alert("Give emailId to reset your password");
          return;
        }
-     console.log(this.details.email,"student")
-     this.service.reset(this.details.email,"student").subscribe(res=>{
-     })
-     alert("Verification Link is sent to your EmailId")
-    }
-    else{
-      if(this.details.email===""){
-        alert("Give emailId to reset your password");
-        return;
-      }
-     console.log(this.details.email,"mentor")
-     this.service.reset(this.details.email,"mentor").subscribe(res=>{
-     })
-     alert("Verification Link is sent to your EmailId")
-    }
+      console.log(this.details.email,"mentor")
+      this.service.reset(this.details.email,"mentor").subscribe(res=>{
+      })
+      alert("Verification Link is sent to your EmailId")
+     }
+    },err=>{alert("Oops it looks you Havent Registered With Us !!")})
+  }
+  else{
+    this.http.get(`https://arcane-ocean-14843.herokuapp.com/api/MentorSignUps/findOne?filter={%22where%22:{%22email%22:%22${this.details.email}%22}}`)
+    .subscribe((res)=>{
+      if(this.router.url==="/login/student"){
+        if(this.details.email===""){
+          alert("Give emailId to reset your password");
+          return;
+        }
+      console.log(this.details.email,"student")
+      this.service.reset(this.details.email,"student").subscribe(res=>{
+      })
+      alert("Verification Link is sent to your EmailId")
+     }
+     else{
+       if(this.details.email===""){
+         alert("Give emailId to reset your password");
+         return;
+       }
+      console.log(this.details.email,"mentor")
+      this.service.reset(this.details.email,"mentor").subscribe(res=>{
+      })
+      alert("Verification Link is sent to your EmailId")
+     }
+    },err=>{alert("Oops it looks you Havent Registered With Us !!")})
+  }
+     
    }
 
   ngOnInit() {

@@ -18,12 +18,14 @@ export class ResetpassComponent implements OnInit , OnDestroy{
   public detailS={
    "Name":'',
    "Password":'',
-   "email":''
+   "email":'',
+   "contactNo":'',
   }
   public detailM={
     "Name":'',
     "Password":'',
-    "email":''
+    "email":'',
+    "contactNo":'',
    }
 
   constructor(private commonService:CommonService,private http:HttpClient,private route:ActivatedRoute,private router:Router) { 
@@ -50,6 +52,7 @@ export class ResetpassComponent implements OnInit , OnDestroy{
         console.log(this.response.password);
         this.detailS.Name=this.response.Name;
         this.detailS.email=this.response.email;
+        this.detailS.contactNo=this.response.contactNo;
         this.detailS.Password=this.epassword;
         console.log(this.detailS);
         this.http.put(`https://arcane-ocean-14843.herokuapp.com/api/UserSignUps/${this.response.id}`,this.detailS)
@@ -65,6 +68,7 @@ export class ResetpassComponent implements OnInit , OnDestroy{
         console.log(this.response.password);
         this.detailM.Name=this.response.Name;
         this.detailM.email=this.response.email;
+        this.detailM.contactNo=this.response.contactNo;
         this.detailM.Password=this.epassword;
         console.log(this.detailM);
         this.http.put(`https://arcane-ocean-14843.herokuapp.com/api/MentorSignUps/${this.response.id}`,this.detailM)
