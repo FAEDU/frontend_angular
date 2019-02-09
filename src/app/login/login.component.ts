@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   showPage :boolean =  false;
+  public mentor=false;
   response : any;
   details = 
   {
@@ -87,6 +88,8 @@ export class LoginComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit() {
+    if(this.router.url==='/login/student')
+      this.mentor=true;
     if(localStorage.getItem('name')!==null)
       this.router.navigateByUrl('/dashboard/university');
     this.loaderService.display(true);
