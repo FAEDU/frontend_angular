@@ -9,11 +9,14 @@ import { LoaderService } from '../services/common.service';
 })
 export class HeaderComponent implements OnInit {
   showPage :boolean= false;
+  public loggedIn:boolean=true;
   constructor(private loaderService: LoaderService) {
   
    }
 
   ngOnInit() {
+    if(localStorage.getItem('id')!==undefined)
+      this.loggedIn=true;
     this.loaderService.display(true);
     setTimeout(()=>{
       this.showPage = true

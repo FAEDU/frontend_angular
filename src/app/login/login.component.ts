@@ -26,13 +26,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.commonService.showHeadernFooter(false);
    }
 
-   seturl(){
-     if(this.router.url==="/login/student")
-      localStorage.setItem('loggedIn','student');
-    else
-      localStorage.setItem('loggedIn','mentor');
-   }
-
    reset(){
      if(this.router.url==="/login/student"){
     this.http.get(`https://arcane-ocean-14843.herokuapp.com/api/UserSignUps/findOne?filter={%22where%22:{%22email%22:%22${this.details.email}%22}}`)
