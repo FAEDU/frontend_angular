@@ -59,7 +59,7 @@ export class CommonService {
         let params = new HttpParams();
         params = params.append("email", details.email);
         params = params.append("password", details.password);
-        return this.http.get(`https://arcane-ocean-14843.herokuapp.com/api/MentorSignUps/findOne?filter={%22where%22:{%22and%22:[{%22email%22:%22${details.email}%22},{%22Password%22:%22${details.password}%22}]}}`,);
+        return this.http.get(`https://arcane-ocean-14843.herokuapp.com/api/MentorSignUps/findOne?filter={%22where%22:{%22and%22:[{%22email%22:%22${details.email}%22},{%22Password%22:%22${details.password}%22}]}}`);
 
     }
 

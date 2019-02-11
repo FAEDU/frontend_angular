@@ -15,8 +15,8 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit() {
-    if(localStorage.getItem('id')!==undefined)
-      this.loggedIn=true;
+    if(localStorage.getItem('id')!==null)
+      this.loggedIn=false;
     this.loaderService.display(true);
     setTimeout(()=>{
       this.showPage = true
