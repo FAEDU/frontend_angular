@@ -10,7 +10,7 @@
 				<!-- Event -->
 				<div class="col-lg-4 event_col"*ngFor="let event of events">
 					<div class="event">
-						<div class="event_image"><img src="assets/images/event_1.jpg" alt=""></div>
+						<div class="event_image"><img src="{{event.imageUrl}}" alt=""></div>
 						<div sty class="event_date d-flex flex-column align-items-center justify-content-center">
 							<div class="event_day"><h6 style="font-size: 38%;">{{event.Date}}</h6></div>
 							<div class="event_month"><h6 style="font-size: 120%;">{{event.Time}}</h6></div>
