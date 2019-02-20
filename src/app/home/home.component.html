@@ -22,7 +22,7 @@
 		
 						<!-- Register Form -->
 		
-						<div class="col-lg-6">
+						<div class="col-lg-8">
 							<div class="register_form_container">
 								<div class="register_form_title">Find out your Dream College!</div>
 								<form #homeForm = "ngForm" novalidate id="register_form" class="register_form">
@@ -45,6 +45,20 @@
 												Please enter phone.
 											  </div> -->
 										</div>
+										<div style="width: 12%;" class="col-lg-6 register_col">
+														<select name="country" [(ngModel)]="detail.country">
+															<option value=''>Select Country</option>
+															<option *ngFor="let country of country" value="{{country}}">{{country}}</option>
+														</select>
+										</div>
+										<div class="col-lg-6 register_col">
+												<select [(ngModel)]="detail.course" name="course">
+													<option value="">Select your Course</option>
+													<option value="TOEFL">TOEFL</option>
+													<option value="IELTS">IELTS</option>
+													<option value="GRE">GRE</option>
+												</select>
+								</div>
 										<div class="col">
 											<button type="submit"  [disabled]="!homeForm.form.valid" (click)="submit()" class="form_button trans_200">find out now</button>
 										</div>
@@ -55,7 +69,7 @@
 		
 						<!-- Register Timer -->
 		
-						<div class="col-lg-6">
+						<div class="col-lg-4">
 							<div class="register_timer_container">
 								<div class="register_timer_title">Your Score. Your College.</div>
 								<div class="register_timer_text">
@@ -186,7 +200,7 @@
 			<div class="row events_row" >
 
 				<!-- Event -->
-				<div class="col-lg-4 event_col"*ngFor="let event of events">
+				<div class="col-lg-4 event_col" *ngFor="let event of events">
 					<div class="event">
 						<div class="event_image"><img src="{{event.imageUrl}}" alt=""></div>
 						<div sty class="event_date d-flex flex-column align-items-center justify-content-center">
@@ -204,6 +218,8 @@
 			</div>
 		</div>
 	</div>
+
+	<img style="padding:2em;margin-left:11%;text-align: center" height="100%" width="90%" src="/assets/images/services.png">
 
 	<!-- Blog -->
 
@@ -289,15 +305,15 @@
 				<!-- Blog Right -->
 
 				<div class="col-lg-6">
-					<div class="blog_right">
+					<div style="padding-bottom:12%;height:170%" class="blog_right">
 						<div class="blog_image" style="background-image:url(assets/images/blog_7.jpg)"></div>
-						<div class="blog_title_container">
-							<div class="blog_right_category"><a href="#">MBA</a></div>
-							<div class="blog_right_title"><a href="blog_single.html">MBA in USA!</a></div>
-							<div class="blog_right_text">
-								<p>Whether it is a signup flow, a multi-view stepper, or a monotonous data entry interface, forms are one of the most important components of digital product design.</p>
-							</div>
-							<div class="read_more"><a href="blog_single.html">Read More <img src="assets/images/right.png" alt=""></a></div>
+						<div style="padding-bottom:12%;" class="blog_title_container">
+								Registered Users<div id="shiva"><span class="count">2000</span></div><br><br><br><br>
+								Registered Mentors<div id="shiva"><span class="count">200</span></div><br><br><br><br>
+								No of Mentoring calls<div id="shiva"><span class="count">250</span></div><br><br><br>
+								No of coutries we have mentors frpm<div id="shiva"><span class="count">30</span></div><br><br><br><br>
+								Acceptance from top universities<div id="shiva"><span class="count">10</span></div><br><br><br><br><br>
+								Positive recomdations<div id="shiva"><span class="count">87</span></div>
 						</div>
 					</div>
 				</div>

@@ -80,7 +80,7 @@ import { InstructorComponent } from './instructor/instructor.component';
     ROUTING,
     RouterModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [ CommonService,
     AuthService, LoaderService,
