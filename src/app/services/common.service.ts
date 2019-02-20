@@ -63,6 +63,11 @@ export class CommonService {
 
     }
 
+    notify(email){
+        console.log(email);
+        return this.http.get(`http://secret-atoll-46665.herokuapp.com/sendemailtostudent/${email}`)
+    }
+
     reset(email,string){
         console.log(email);
        return this.http.get(`https://secret-atoll-46665.herokuapp.com/reset/${string}/${email}`);
@@ -83,6 +88,7 @@ export class CommonService {
     }
     scoreForm(details)
     {
+        
         return this.http.post('https://arcane-ocean-14843.herokuapp.com/api/ContactUs',details);
     }
 

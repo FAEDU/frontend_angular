@@ -68,10 +68,11 @@
                 <li><a href="blog.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li> -->
                 <li><a href="/home" [routerLinkActive]="'is-active'">Home</a></li>
-      <li ><a href="/courses" [routerLinkActive]="'is-active'">Courses</a></li>
+      <li ><a [routerLink]="['/courses']" [routerLinkActive]="'is-active'">Courses</a></li>
       <li ><a [routerLink]="['/plansandpricing']" [routerLinkActive]="'is-active'">Plans and Pricing</a></li>
       <li ><a [routerLink]="['/events']" [routerLinkActive]="'is-active'">Events</a></li>
       <li ><a [routerLink]="['/blog']" [routerLinkActive]="'is-active'">Blog</a></li>
+      <li ><a [routerLink]="['/instructor']" [routerLinkActive]="'is-active'">Instructors</a></li>
       <li ><a [routerLink]="['/contact']" [routerLinkActive]="'is-active'">Contact</a></li>
               </ul>
             </nav>

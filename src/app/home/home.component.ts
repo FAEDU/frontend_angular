@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation , OnInit } from '@angular/core';
 import { CommonService, LoaderService } from '../services/common.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
     emailID : '',
     query : ''
   }
-  constructor(private commonService :CommonService, private loaderService: LoaderService,private router:Router) {
+  constructor(private http:HttpClient,private commonService :CommonService, private loaderService: LoaderService,private router:Router) {
     this.commonService.showHeadernFooter(true);
 
    }
@@ -55,15 +56,23 @@ export class HomeComponent implements OnInit {
 
   submit()
   {
+    console.log("yes");
     this.loaderService.display(true);
+    if(localStorage.getItem('email') === undefined){
+      this.router.navigateByUrl('/login/student')
+    }
+    else{
     this.commonService.scoreForm(this.detail).subscribe((result)=>{
       this.loaderService.display(false);
-      this.detail.name ='';
-      this.detail.emailID ='';
-      this.detail.query ='';
-      alert("Thanks for contacting us we will get back to you of your dream university withing 24 hours");
-
+      this.commonService.notify(this.detail.emailID).subscribe(res=>{
+        console.log(res);
+          this.detail.name ='';
+          this.detail.emailID ='';
+          this.detail.query ='';
+        alert("Thanks for contacting us we will get back to you of your dream university withing 24 hours");
+      })
     })
+  }
 
   }
   eventclicked(desc,name,time,date){

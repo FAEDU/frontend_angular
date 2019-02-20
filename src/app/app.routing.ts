@@ -26,6 +26,7 @@ import { BlogopenComponent } from './blogopen/blogopen.component';
 import { SopresumelorComponent } from './dashboard/sopresumelor/sopresumelor.component';
 import { EventsComponent } from './events/events.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
+import { InstructorComponent } from './instructor/instructor.component';
 
 
  
@@ -37,6 +38,7 @@ export const AppRoutes: Routes = [
     { path: 'courses', component: CoursesComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'plansandpricing', component: InstructorsComponent },
+    {path:'instructor',component:InstructorComponent},
     { path: 'login/:id', component: LoginComponent },
     { path: 'signup/:id', component: SignupComponent },
     { path: 'profile', component: ProfileComponent },

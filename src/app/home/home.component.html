@@ -1,13 +1,76 @@
 <!-- <div *ngIf = "showPage"> -->
 
-
-	<div class="home">
-		<div class="home_background" style="background-image: url(assets/images/index_background.jpg);"></div>
+		<div style="display: flex">
+		<div class="home">
+		<div class="home_background" style="background-image: url(assets/images/index_background.jpg);">
+		</div>
+		</div>
+		<div style="display:flex;margin-top:1em;">
 		<div class="home_content">
 			<div class="container">
 				<div class="row">
 					<div class="col text-center">
 						<h1 class="home_title text-left" style="color:#fff;">BETTER EDUCATION,<br> BETTER WORLD !</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="register">
+				<div class="container">
+					<div class="row">
+		
+						<!-- Register Form -->
+		
+						<div class="col-lg-6">
+							<div class="register_form_container">
+								<div class="register_form_title">Find out your Dream College!</div>
+								<form #homeForm = "ngForm" novalidate id="register_form" class="register_form">
+									<div class="row register_row">
+										<div class="col-lg-6 register_col">
+											<input type="text" class="form_input" name ="name" [(ngModel)]="detail.name" placeholder="Name" #name="ngModel" required>
+											<!-- <div *ngIf="name.errors?.required && name.touched" class="error ">
+												Please enter name.
+											  </div> -->
+										</div>
+										<div class="col-lg-6 register_col">
+											<input type="email" class="form_input" name ="email" [(ngModel)]="detail.emailID" placeholder="Email" #email="ngModel"  required>
+											<!-- <div *ngIf="email.errors?.required && email.touched" class="error ">
+												Please enter email.
+											  </div> -->
+										</div>
+										<div class="col-lg-6 register_col">
+											<input type="tel" class="form_input" [(ngModel)]="detail.query" name ="query" placeholder="Phone" #phone="ngModel" required>
+											<!-- <div *ngIf="phone.errors?.required && phone.touched" class="error ">
+												Please enter phone.
+											  </div> -->
+										</div>
+										<div class="col">
+											<button type="submit"  [disabled]="!homeForm.form.valid" (click)="submit()" class="form_button trans_200">find out now</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+		
+						<!-- Register Timer -->
+		
+						<div class="col-lg-6">
+							<div class="register_timer_container">
+								<div class="register_timer_title">Your Score. Your College.</div>
+								<div class="register_timer_text">
+									<p>Predict where you'll land with your score with our Prediction Meter. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+								</div>
+								<!--<div class="timer_container">
+									<ul class="timer_list">
+										<li><div id="day" class="timer_num">00</div><div class="timer_ss">days</div></li>
+										<li><div id="hour" class="timer_num">00</div><div class="timer_ss">hours</div></li>
+										<li><div id="minute" class="timer_num">00</div><div class="timer_ss">minutes</div></li>
+										<li><div id="second" class="timer_num">00</div><div class="timer_ss">seconds</div></li>
+									</ul>
+								</div>-->
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -110,65 +173,7 @@
 
 	<!-- Register -->
 
-	<div class="register">
-		<div class="container">
-			<div class="row">
-
-				<!-- Register Form -->
-
-				<div class="col-lg-6">
-					<div class="register_form_container">
-						<div class="register_form_title">Find out your Dream College!</div>
-						<form #homeForm = "ngForm" novalidate id="register_form" class="register_form">
-							<div class="row register_row">
-								<div class="col-lg-6 register_col">
-									<input type="text" class="form_input" name ="name" [(ngModel)]="detail.name" placeholder="Name" #name="ngModel" required>
-									<!-- <div *ngIf="name.errors?.required && name.touched" class="error ">
-										Please enter name.
-									  </div> -->
-								</div>
-								<div class="col-lg-6 register_col">
-									<input type="email" class="form_input" name ="email" [(ngModel)]="detail.emailID" placeholder="Email" #email="ngModel"  required>
-									<!-- <div *ngIf="email.errors?.required && email.touched" class="error ">
-										Please enter email.
-									  </div> -->
-								</div>
-								<div class="col-lg-6 register_col">
-									<input type="tel" class="form_input" [(ngModel)]="detail.query" name ="query" placeholder="Phone" #phone="ngModel" required>
-									<!-- <div *ngIf="phone.errors?.required && phone.touched" class="error ">
-										Please enter phone.
-									  </div> -->
-								</div>
-								<div class="col">
-									<button type="submit"  [disabled]="!homeForm.form.valid" (click)="submit()" class="form_button trans_200">find out now</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-
-				<!-- Register Timer -->
-
-				<div class="col-lg-6">
-					<div class="register_timer_container">
-						<div class="register_timer_title">Your Score. Your College.</div>
-						<div class="register_timer_text">
-							<p>Predict where you'll land with your score with our Prediction Meter. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
-						</div>
-						<!--<div class="timer_container">
-							<ul class="timer_list">
-								<li><div id="day" class="timer_num">00</div><div class="timer_ss">days</div></li>
-								<li><div id="hour" class="timer_num">00</div><div class="timer_ss">hours</div></li>
-								<li><div id="minute" class="timer_num">00</div><div class="timer_ss">minutes</div></li>
-								<li><div id="second" class="timer_num">00</div><div class="timer_ss">seconds</div></li>
-							</ul>
-						</div>-->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	
 	<!-- Events -->
 
 	<div class="events">

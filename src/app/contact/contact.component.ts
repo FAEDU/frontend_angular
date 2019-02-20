@@ -31,10 +31,13 @@ export class ContactComponent implements OnInit {
     this.commonService.contactForm(this.detail).subscribe((result)=>{
       console.log(result);
       this.loaderService.display(false);
-      this.detail.name = '';
-      this.detail.emailID ='';
-      this.detail.query ='';
-      alert("Thanks for contacting us we will get back to you of your dream university withing 24 hours"); 
+      this.commonService.notify(this.detail.emailID).subscribe(res=>{
+        console.log(res)
+        this.detail.name = '';
+        this.detail.emailID ='';
+        this.detail.query ='';
+        alert("Thanks for contacting us we will get back to you of your dream university withing 24 hours"); 
+      })
     })
   }
 

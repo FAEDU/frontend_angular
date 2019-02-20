@@ -37,6 +37,7 @@ import { BlogopenComponent } from './blogopen/blogopen.component';
 import { SopresumelorComponent } from './dashboard/sopresumelor/sopresumelor.component';
 import { EventsComponent } from './events/events.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
+import { InstructorComponent } from './instructor/instructor.component';
 
 
 
@@ -72,6 +73,7 @@ import { ResetpassComponent } from './resetpass/resetpass.component';
     SopresumelorComponent,
     EventsComponent,
     ResetpassComponent,
+    InstructorComponent,
   ],
   imports: [
     BrowserModule, 
