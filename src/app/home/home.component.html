@@ -52,12 +52,19 @@
 														</select>
 										</div>
 										<div class="col-lg-6 register_col">
-												<select [(ngModel)]="detail.course" name="course">
-													<option value="">Select your Course</option>
+												<select name="score" [(ngModel)]="detail.score">
+													<option value="">Select your Score</option>
 													<option value="TOEFL">TOEFL</option>
 													<option value="IELTS">IELTS</option>
 													<option value="GRE">GRE</option>
 												</select>
+								</div>
+								<div class="col-lg-6 register_col">
+										<select name="term" [(ngModel)]="detail.term">
+											<option value="">Select your Term</option>
+											<option value="fall">Fall</option>
+											<option value="springs">Springs</option>
+										</select>
 								</div>
 										<div class="col">
 											<button type="submit"  [disabled]="!homeForm.form.valid" (click)="submit()" class="form_button trans_200">find out now</button>
@@ -219,7 +226,7 @@
 		</div>
 	</div>
 
-	<img style="padding:2em;margin-left:11%;text-align: center" height="100%" width="90%" src="/assets/images/services.png">
+	<img style="padding:2em;text-align: center" height="100%" width="90%" src="/assets/images/services.png">
 
 	<!-- Blog -->
 
@@ -241,8 +248,32 @@
 								<div class="col-md-4 blog_category_col">
 									<a href="blog.html">
 										<div class="blog_category">
-											<div class="blog_category_image"><img src="assets/images/blog_1.jpg" alt=""></div>
-											<div class="blog_category_title">MBA</div>
+												Registered Students<div id="shiva"><span class="count">2000</span></div>
+										</div>
+									</a>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-4 blog_category_col">
+									<a href="blog.html">
+											Number of Mentoring Call<div id="shiva"><span class="count">200</span></div>									</a>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-4 blog_category_col">
+									<a href="blog.html">
+										<div class="blog_category">
+												Acceptance Rate of Univeristy(%)<div id="shiva"><span class="count">90</span></div>
+										</div>
+											</a>
+
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-4 blog_category_col">
+									<a href="blog.html">
+										<div class="blog_category">
+												Number of countries we have mentors from<div id="shiva"><span class="count">30</span></div>
 										</div>
 									</a>
 								</div>
@@ -251,8 +282,7 @@
 								<div class="col-md-4 blog_category_col">
 									<a href="blog.html">
 										<div class="blog_category">
-											<div class="blog_category_image"><img src="assets/images/blog_2.jpg" alt=""></div>
-											<div class="blog_category_title">FOREX</div>
+											Positive recommdations(%)<div id="shiva"><span class="count">100</span></div>
 										</div>
 									</a>
 								</div>
@@ -261,38 +291,7 @@
 								<div class="col-md-4 blog_category_col">
 									<a href="blog.html">
 										<div class="blog_category">
-											<div class="blog_category_image"><img src="assets/images/blog_3.jpg" alt=""></div>
-											<div class="blog_category_title">MASTERS</div>
-										</div>
-									</a>
-								</div>
-
-								<!-- Category -->
-								<div class="col-md-4 blog_category_col">
-									<a href="blog.html">
-										<div class="blog_category">
-											<div class="blog_category_image"><img src="assets/images/blog_4.jpg" alt=""></div>
-											<div class="blog_category_title">VISA</div>
-										</div>
-									</a>
-								</div>
-
-								<!-- Category -->
-								<div class="col-md-4 blog_category_col">
-									<a href="blog.html">
-										<div class="blog_category">
-											<div class="blog_category_image"><img src="assets/images/blog_5.jpg" alt=""></div>
-											<div class="blog_category_title">USA</div>
-										</div>
-									</a>
-								</div>
-
-								<!-- Category -->
-								<div class="col-md-4 blog_category_col">
-									<a href="blog.html">
-										<div class="blog_category">
-											<div class="blog_category_image"><img src="assets/images/blog_6.jpg" alt=""></div>
-											<div class="blog_category_title">MS</div>
+												Number of students mentored (include the numbers of orientation call booking people)<div id="shiva"><span class="count">450</span></div>
 										</div>
 									</a>
 								</div>
@@ -305,15 +304,10 @@
 				<!-- Blog Right -->
 
 				<div class="col-lg-6">
-					<div style="padding-bottom:12%;height:170%" class="blog_right">
+					<div class="blog_right">
 						<div class="blog_image" style="background-image:url(assets/images/blog_7.jpg)"></div>
-						<div style="padding-bottom:12%;" class="blog_title_container">
-								Registered Users<div id="shiva"><span class="count">2000</span></div><br><br><br><br>
-								Registered Mentors<div id="shiva"><span class="count">200</span></div><br><br><br><br>
-								No of Mentoring calls<div id="shiva"><span class="count">250</span></div><br><br><br>
-								No of coutries we have mentors frpm<div id="shiva"><span class="count">30</span></div><br><br><br><br>
-								Acceptance from top universities<div id="shiva"><span class="count">10</span></div><br><br><br><br><br>
-								Positive recomdations<div id="shiva"><span class="count">87</span></div>
+						<div class="blog_title_container">
+								Number of students mentored (include the numbers of orientation call booking people)<div id="shiva"><span class="count">450</span></div>
 						</div>
 					</div>
 				</div>

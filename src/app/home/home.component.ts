@@ -39,7 +39,8 @@ export class HomeComponent implements OnInit {
     emailID : '',
     query : '',
     country:'',
-    course:''
+    score:'',
+    term:''
   }
   constructor(private http:HttpClient,private commonService :CommonService, private loaderService: LoaderService,private router:Router) {
     this.commonService.showHeadernFooter(true);
@@ -141,7 +142,9 @@ export class HomeComponent implements OnInit {
           this.detail.name ='';
           this.detail.emailID ='';
           this.detail.query ='';
-          this.detail.country=''
+          this.detail.country='';
+          this.detail.score="";
+          this.detail.term='';
         alert("Thanks for contacting us we will get back to you of your dream university withing 24 hours");
       })
     })
