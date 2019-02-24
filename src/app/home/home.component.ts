@@ -49,6 +49,10 @@ export class HomeComponent implements OnInit {
    
 
   ngOnInit() {
+    var array=[{"id":112,"name":"Abhinav"}]
+    var x={"response":"success",array:array};
+    console.log(x);
+    console.log(x.array[0].id)
     $('.count').each(function () {
       $(this).prop('Counter',0).animate({
           Counter: $(this).text()
