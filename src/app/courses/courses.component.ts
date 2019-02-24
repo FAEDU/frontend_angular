@@ -59,7 +59,7 @@ export class CoursesComponent implements OnInit {
 
   getcountries(){
     var n=this.universityData.map(i=>{
-      return i.Country
+      return i.location
     })
 
     n.forEach(i=>{
@@ -83,7 +83,7 @@ export class CoursesComponent implements OnInit {
     this.universitydata=this.universityData;
     if(this.selectedcountry!==""){
     this.universitydata=this.universitydata.filter(i=>{
-      if(i.Country===this.selectedcountry)
+      if(i.location===this.selectedcountry)
         return i;
     })
     console.log(this.universitydata)

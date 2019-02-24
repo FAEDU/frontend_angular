@@ -15,95 +15,95 @@
 				</div>
 			</div>
 		</div>
-		
-		<div class="register">
-				<div class="container">
-					<div class="row">
-		
-						<!-- Register Form -->
-		
-						<div class="col-lg-8">
-							<div class="register_form_container">
-								<div class="register_form_title">Find out your Dream College!</div>
-								<form #homeForm = "ngForm" novalidate id="register_form" class="register_form">
-									<div class="row register_row">
-										<div class="col-lg-6 register_col">
-											<input type="text" class="form_input" name ="name" [(ngModel)]="detail.name" placeholder="Name" #name="ngModel" required>
-											<!-- <div *ngIf="name.errors?.required && name.touched" class="error ">
-												Please enter name.
-											  </div> -->
-										</div>
-										<div class="col-lg-6 register_col">
-											<input type="email" class="form_input" name ="email" [(ngModel)]="detail.emailID" placeholder="Email" #email="ngModel"  required>
-											<!-- <div *ngIf="email.errors?.required && email.touched" class="error ">
-												Please enter email.
-											  </div> -->
-										</div>
-										<div class="col-lg-6 register_col">
-											<input type="tel" class="form_input" [(ngModel)]="detail.query" name ="query" placeholder="Phone" #phone="ngModel" required>
-											<!-- <div *ngIf="phone.errors?.required && phone.touched" class="error ">
-												Please enter phone.
-											  </div> -->
-										</div>
-										<div style="width: 12%;" class="col-lg-6 register_col">
-														<select name="country" [(ngModel)]="detail.country">
-															<option value=''>Select Country</option>
-															<option *ngFor="let country of country" value="{{country}}">{{country}}</option>
-														</select>
-										</div>
-										<div class="col-lg-6 register_col">
-												<select name="score" [(ngModel)]="detail.score">
-													<option value="">Select your Score</option>
-													<option value="TOEFL">TOEFL</option>
-													<option value="IELTS">IELTS</option>
-													<option value="GRE">GRE</option>
-												</select>
-								</div>
-								<div class="col-lg-6 register_col">
-										<select name="term" [(ngModel)]="detail.term">
-											<option value="">Select your Term</option>
-											<option value="fall">Fall</option>
-											<option value="springs">Springs</option>
-										</select>
-								</div>
-										<div class="col">
-											<button type="submit"  [disabled]="!homeForm.form.valid" (click)="submit()" class="form_button trans_200">find out now</button>
-										</div>
-									</div>
-								</form>
+		</div>
+  </div>
+
+  <div class="register">
+	<div class="container">
+		<div class="row">
+
+			<!-- Register Form -->
+
+			<div class="col-lg-8">
+				<div class="register_form_container">
+					<div class="register_form_title">Find out your Dream College!</div>
+					<form #homeForm = "ngForm" novalidate id="register_form" class="register_form">
+						<div class="row register_row">
+							<div class="col-lg-6 register_col">
+								<input type="text" class="form_input" name ="name" [(ngModel)]="detail.name" placeholder="Name" #name="ngModel" required>
+								<!-- <div *ngIf="name.errors?.required && name.touched" class="error ">
+									Please enter name.
+								  </div> -->
 							</div>
-						</div>
-		
-						<!-- Register Timer -->
-		
-						<div class="col-lg-4">
-							<div class="register_timer_container">
-								<div class="register_timer_title">Your Score. Your College.</div>
-								<div class="register_timer_text">
-									<p>Predict where you'll land with your score with our Prediction Meter. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
-								</div>
-								<!--<div class="timer_container">
-									<ul class="timer_list">
-										<li><div id="day" class="timer_num">00</div><div class="timer_ss">days</div></li>
-										<li><div id="hour" class="timer_num">00</div><div class="timer_ss">hours</div></li>
-										<li><div id="minute" class="timer_num">00</div><div class="timer_ss">minutes</div></li>
-										<li><div id="second" class="timer_num">00</div><div class="timer_ss">seconds</div></li>
-									</ul>
-								</div>-->
+							<div class="col-lg-6 register_col">
+								<input type="email" class="form_input" name ="email" [(ngModel)]="detail.emailID" placeholder="Email" #email="ngModel"  required>
+								<!-- <div *ngIf="email.errors?.required && email.touched" class="error ">
+									Please enter email.
+								  </div> -->
 							</div>
-						</div>
+							<div class="col-lg-6 register_col">
+								<input type="tel" class="form_input" [(ngModel)]="detail.query" name ="query" placeholder="Phone" #phone="ngModel" required>
+								<!-- <div *ngIf="phone.errors?.required && phone.touched" class="error ">
+									Please enter phone.
+								  </div> -->
+							</div>
+							<div style="width: 12%;" class="col-lg-6 register_col">
+											<select name="country" [(ngModel)]="detail.country">
+												<option value=''>Select Country</option>
+												<option *ngFor="let country of country" value="{{country}}">{{country}}</option>
+											</select>
+							</div>
+							<div class="col-lg-6 register_col">
+									<select name="score" [(ngModel)]="detail.score">
+										<option value="">Select your Score</option>
+										<option value="TOEFL">TOEFL</option>
+										<option value="IELTS">IELTS</option>
+										<option value="GRE">GRE</option>
+									</select>
 					</div>
+					<div class="col-lg-6 register_col">
+							<select name="term" [(ngModel)]="detail.term">
+								<option value="">Select your Term</option>
+								<option value="fall">Fall</option>
+								<option value="springs">Springs</option>
+							</select>
+					</div>
+							<div class="col">
+								<button type="submit"  [disabled]="!homeForm.form.valid" (click)="submit()" class="form_button trans_200">find out now</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Register Timer -->
+
+			<div class="col-lg-4">
+				<div class="register_timer_container">
+					<div class="register_timer_title">Your Score. Your College.</div>
+					<div class="register_timer_text">
+						<p>Predict where you'll land with your score with our Prediction Meter. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+					</div>
+					<!--<div class="timer_container">
+						<ul class="timer_list">
+							<li><div id="day" class="timer_num">00</div><div class="timer_ss">days</div></li>
+							<li><div id="hour" class="timer_num">00</div><div class="timer_ss">hours</div></li>
+							<li><div id="minute" class="timer_num">00</div><div class="timer_ss">minutes</div></li>
+							<li><div id="second" class="timer_num">00</div><div class="timer_ss">seconds</div></li>
+						</ul>
+					</div>-->
 				</div>
 			</div>
 		</div>
-  </div>
+	</div>
+</div>
   
   <div class="courses">
 		<div class="courses_background"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h2 class="section_title text-center">Popular Plans</h2>
+					<a href="/plansandpricing"><h2 class="section_title text-center">Popular Plans</h2></a>
 				</div>
 			</div>
 			<div class="row courses_row">
@@ -248,7 +248,7 @@
 								<div class="col-md-4 blog_category_col">
 									<a href="blog.html">
 										<div class="blog_category">
-												Registered Students<div id="shiva"><span class="count">2000</span></div>
+												<div id="shiva"><span class="count">2000</span></div>Registered Students
 										</div>
 									</a>
 								</div>
@@ -256,14 +256,14 @@
 								<!-- Category -->
 								<div class="col-md-4 blog_category_col">
 									<a href="blog.html">
-											Number of Mentoring Call<div id="shiva"><span class="count">200</span></div>									</a>
+											<div id="shiva"><span class="count">200</span></div>Mentoring Call								</a>
 								</div>
 
 								<!-- Category -->
 								<div class="col-md-4 blog_category_col">
 									<a href="blog.html">
 										<div class="blog_category">
-												Acceptance Rate of Univeristy(%)<div id="shiva"><span class="count">90</span></div>
+												<div id="shiva"><span class="count">90</span></div>Acceptance Rate of Univeristy(%)
 										</div>
 											</a>
 
@@ -273,7 +273,7 @@
 								<div class="col-md-4 blog_category_col">
 									<a href="blog.html">
 										<div class="blog_category">
-												Number of countries we have mentors from<div id="shiva"><span class="count">30</span></div>
+												<div id="shiva"><span class="count">30</span></div>Number of countries we have mentors from
 										</div>
 									</a>
 								</div>
@@ -282,7 +282,7 @@
 								<div class="col-md-4 blog_category_col">
 									<a href="blog.html">
 										<div class="blog_category">
-											Positive recommdations(%)<div id="shiva"><span class="count">100</span></div>
+											<div id="shiva"><span class="count">100</span></div>Positive recommdations(%)
 										</div>
 									</a>
 								</div>
@@ -291,7 +291,7 @@
 								<div class="col-md-4 blog_category_col">
 									<a href="blog.html">
 										<div class="blog_category">
-												Number of students mentored (include the numbers of orientation call booking people)<div id="shiva"><span class="count">450</span></div>
+												<div id="shiva"><span class="count">450</span></div>Number of students mentored
 										</div>
 									</a>
 								</div>
