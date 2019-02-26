@@ -38,6 +38,7 @@ import { SopresumelorComponent } from './dashboard/sopresumelor/sopresumelor.com
 import { EventsComponent } from './events/events.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
 import { InstructorComponent } from './instructor/instructor.component';
+import { NotloggeddashboardComponent } from './notloggeddashboard/notloggeddashboard.component';
 
 
 
@@ -74,6 +75,7 @@ import { InstructorComponent } from './instructor/instructor.component';
     EventsComponent,
     ResetpassComponent,
     InstructorComponent,
+    NotloggeddashboardComponent
   ],
   imports: [
     BrowserModule, 

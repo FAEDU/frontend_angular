@@ -27,6 +27,7 @@ import { SopresumelorComponent } from './dashboard/sopresumelor/sopresumelor.com
 import { EventsComponent } from './events/events.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
 import { InstructorComponent } from './instructor/instructor.component';
+import { NotloggeddashboardComponent } from './notloggeddashboard/notloggeddashboard.component';
 
 
  
@@ -44,13 +45,14 @@ export const AppRoutes: Routes = [
     { path: 'profile', component: ProfileComponent },
     {path:'single_blog',component:BlogopenComponent},
     {path:'events',component:EventsComponent},
+    {path:'not_logged_dashboard',component:NotloggeddashboardComponent},
     {path:'googlelogin/:email/:name/:id',component:GoogleloginComponent},
     {path:"callthatmentor/:email",component:CallthatmentorComponent},
     {path:"reset/:string/:email",component:ResetpassComponent},
     { path: 'universitydetail/:id/:image', component: UniversityDetailComponent },
     { path: 'dashboard', component: DashboardComponent, 
     children: [
-      { path: '', redirectTo: 'university', pathMatch: 'full' },
+        { path: '', redirectTo: 'university', pathMatch: 'full' },
         {path: 'sopresumelor',component:SopresumelorComponent},
         { path: 'university', component: UniversityShortlistingComponent },
         { path: 'air-travel', component: AirtravelHelpComponent},
