@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Services } from '@angular/core/src/view';
 import { CommonService } from '../services/common.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-notloggeddashboard',
@@ -9,10 +10,17 @@ import { CommonService } from '../services/common.service';
 })
 export class NotloggeddashboardComponent implements OnInit {
 
-  constructor(private commonService:CommonService) {     this.commonService.showHeadernFooter(false);
+  constructor(private commonService:CommonService,private router:Router) {     this.commonService.showHeadernFooter(false);
   }
 
   ngOnInit() {
+  }
+
+  goto(){
+    if(localStorage.getItem('id') != undefined )
+      this.router.navigateByUrl('/dashboard');
+    else
+      this.router.navigateByUrl('/login/student');
   }
 
 }
