@@ -49,6 +49,7 @@ export class HomeComponent implements OnInit {
    
 
   ngOnInit() {
+    console.log(localStorage);
     var array=[{"id":112,"name":"Abhinav"}]
     var x={"response":"success",array:array};
     console.log(x);
@@ -133,6 +134,7 @@ export class HomeComponent implements OnInit {
 
   submit()
   {
+    console.log(localStorage);
     console.log("yes");
     this.loaderService.display(true);
     if(localStorage.getItem('email') === undefined){
