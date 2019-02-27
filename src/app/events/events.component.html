@@ -38,6 +38,8 @@
 					<p style="text-align: center">{{date}}</p>
 					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Time</h5>
 					<p style="text-align: center;font-size:120%; ">{{time}}</p>
+					<div style="text-align: center;"><input name="email" [(ngModel)]="eemail" type="email">
+					<button style="text-align: center;" (click)="register()">Register</button></div>
 				</div>
 				<div class="modal-footer">
 					<button id="closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

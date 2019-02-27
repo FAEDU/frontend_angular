@@ -9,6 +9,7 @@ import { filter } from 'rxjs/operator/filter';
 })
 export class EventsComponent implements OnInit {
   public events;
+  public eemail;
   public desc;public Name;public time;public date;
   public monthvalues=[{name:"Jan",v:1},
   {name:"Feb",v:2},
@@ -73,6 +74,18 @@ export class EventsComponent implements OnInit {
     this.time=time;
     this.date=date;
     console.log(desc,name);
+  }
+
+  register(){
+    console.log(this.eemail)
+    if(this.eemail === ""){
+      alert("Enter your email id!");
+      return ;
+    }
+    this.service.eventregister(this.eemail,this.Name).subscribe(res=>{
+      console.log(res);
+      alert('You have successfully regsitered');
+    })
   }
 
 }
