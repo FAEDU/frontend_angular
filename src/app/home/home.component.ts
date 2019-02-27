@@ -14,8 +14,10 @@ declare var $ :any;
 })
 export class HomeComponent implements OnInit {
   showPage : boolean = false;
+  public university:any;
   public response;
   public eemail='';
+  public unidata=[];
   public response2;
   public desc;public Name;public time;public date;
   public events=[];
@@ -50,6 +52,19 @@ export class HomeComponent implements OnInit {
    
 
   ngOnInit() {
+
+    this.http.get('https://secret-atoll-46665.herokuapp.com/topuniversity').subscribe(res=>{
+      this.university=res;
+      console.log(this.university);
+      this.university.map(i=>{
+        this.commonService.getUniversityData(i.uni_id).subscribe(res=>{
+          var response=res;
+          console.log(response)
+          this.unidata.push(response);
+          console.log(this.unidata);
+        })
+      })
+    })
     console.log(localStorage);
     var array=[{"id":112,"name":"Abhinav"}]
     var x={"response":"success",array:array};
@@ -92,7 +107,6 @@ export class HomeComponent implements OnInit {
     })
     console.log(this.country);
   }
-
 
   upcoming(res){
     
@@ -181,6 +195,10 @@ export class HomeComponent implements OnInit {
       console.log(res);
       alert('You have successfully regsitered');
     })
+  }
+
+  goto(u){
+    this.router.navigateByUrl(`/universitydetail/${u.id}/${u.imageUrl}`)
   }
 
 }

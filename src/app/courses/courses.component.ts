@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoaderService, CommonService } from '../services/common.service';
 import { Router } from '@angular/router';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -17,7 +16,9 @@ export class CoursesComponent implements OnInit {
   public selectedcountry="";
   public countries=[];
   public selectedcourse="";
-  public courses=[]
+  public courses=[];
+  public searchbar='';
+  public finaldata=[];
   constructor(private loaderService: LoaderService, private commonService :CommonService,private router:Router) { }
 
   ngOnInit() {
@@ -37,7 +38,7 @@ export class CoursesComponent implements OnInit {
       this.loaderService.display(false);
       this.response  =  result;
       console.log(this.response);
-      this.universitydata=this.universityData = this.response;
+      this.finaldata=this.universitydata=this.universityData = this.response;
       this.getcountries();
       this.getcourses();
     });
@@ -86,14 +87,14 @@ export class CoursesComponent implements OnInit {
       if(i.location===this.selectedcountry)
         return i;
     })
-    console.log(this.universitydata)
+    this.finaldata=this.universitydata;
   }
   if(this.selectedcourse!==""){
     this.universitydata=this.universitydata.filter(i=>{
       if(this.check(i.courses))
         return i;
     })
-    console.log(this.universitydata)
+    this.finaldata=this.universitydata;
   }
 }
 
@@ -107,8 +108,10 @@ export class CoursesComponent implements OnInit {
   }
 
   reset(){
-    this.universitydata=this.universityData;
+    this.finaldata=this.universitydata=this.universityData;
     this.selectedcountry="";
+    this.selectedcourse="";
+    this.searchbar="";
   }
   knowmore(id,img){
     console.log(id,img);
@@ -117,5 +120,18 @@ export class CoursesComponent implements OnInit {
       this.router.navigateByUrl('/login/student');
     else
       this.router.navigateByUrl(`/universitydetail/${id}/${img}`)
+  }
+
+  search(){
+    console.log(this.searchbar)
+    if(this.searchbar === "")
+      return;
+    else{
+      this.finaldata=this.universitydata.filter(i=>{
+        if(i.name.toLowerCase() === this.searchbar.toLowerCase())
+          return i;
+      })
+    }
+    console.log(this.universitydata);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService, LoaderService } from '../../services/common.service';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-university-shortlisting',
@@ -20,6 +21,7 @@ export class UniversityShortlistingComponent implements OnInit {
     courses:"",
   }
 
+  public finaldata=[];
   public who=false;
   public searchbar='';
   public name;
@@ -40,7 +42,7 @@ export class UniversityShortlistingComponent implements OnInit {
   public c="";
   public ieltsfilter="";
   public filtercourse="";
-  constructor(private commonService :CommonService, private loaderService : LoaderService) { }
+  constructor(private commonService :CommonService, private loaderService : LoaderService,private http:HttpClient) { }
 
   ngOnInit() {
     if(localStorage.getItem('loggedIn')==='mentor'){
@@ -58,7 +60,7 @@ export class UniversityShortlistingComponent implements OnInit {
     this.commonService.getUniversitiesData().subscribe((result)=>{
       this.loaderService.display(false);
      this.response = result;
-     this.universityData=this.filtereduniversity = this.response
+    this.finaldata=this.universityData=this.filtereduniversity = this.response
       this.filterlocation();
       this.coursesfilter();
     });
@@ -105,7 +107,6 @@ export class UniversityShortlistingComponent implements OnInit {
     console.log(id);
     this.commonService.getUniversityData(id).subscribe((result)=>{
     this.test=result;
-    //console.log(response);
     this.university.name=this.test.name;
     this.university.desc=this.test.desc;
     this.university.GRE=this.test.GRE;
@@ -116,6 +117,9 @@ export class UniversityShortlistingComponent implements OnInit {
     this.courses=this.university.courses;
     this.university.location=this.test.location;
      console.log(this.university);
+     this.http.get(`https://secret-atoll-46665.herokuapp.com/universityclicked/${id}`).subscribe(res=>{
+      console.log(res);
+    })
    });
   }
   
@@ -181,7 +185,6 @@ export class UniversityShortlistingComponent implements OnInit {
 
   //filteration is happening
   applyfilter(){
-
    this.filtereduniversity=this.universityData;
 
     if(this.locationfilter!==""){
@@ -189,6 +192,7 @@ export class UniversityShortlistingComponent implements OnInit {
         if(i.location===this.locationfilter)
           return i;
       })
+      this.finaldata=this.filtereduniversity
       console.log(this.filtereduniversity);
     }
     if(this.filtergre!==""){
@@ -196,6 +200,7 @@ export class UniversityShortlistingComponent implements OnInit {
         if(parseInt(i.GRE)===parseInt(this.filtergre))
           return i;
       })
+      this.finaldata=this.filtereduniversity
       console.log(this.filtereduniversity);
     }
   if(this.c!==""){
@@ -203,6 +208,7 @@ export class UniversityShortlistingComponent implements OnInit {
       if(this.checki(i))
         return i;
     })
+    this.finaldata=this.filtereduniversity
     console.log(this.filtereduniversity);
   }
 
@@ -211,6 +217,7 @@ export class UniversityShortlistingComponent implements OnInit {
       if(parseInt(this.toeflfilter) <= parseInt(i.TOEFL))
         return i;
     })
+    this.finaldata=this.filtereduniversity
     console.log(this.filtereduniversity);
   }
 
@@ -219,6 +226,7 @@ export class UniversityShortlistingComponent implements OnInit {
       if(parseInt(this.ieltsfilter)===parseInt(i.IELTS))
         return i;
     })
+    this.finaldata=this.filtereduniversity
     console.log(this.filtereduniversity);
   }
 
@@ -235,6 +243,7 @@ export class UniversityShortlistingComponent implements OnInit {
       if(parseInt(this.rankfilter) >= parseInt(i.ranking))
         return i;
     })
+    this.finaldata=this.filtereduniversity
     console.log(this.filtereduniversity);
   }
 }
@@ -254,7 +263,7 @@ export class UniversityShortlistingComponent implements OnInit {
     console.log(this.searchbar);
     if(this.searchbar === '')
       return;
-    this.filtereduniversity=this.universityData.filter(i=>{
+    this.finaldata=this.filtereduniversity.filter(i=>{
       if(i.name.toLowerCase() === this.searchbar.toLowerCase())
         return i;
     })

@@ -40,6 +40,8 @@
                       </select>
                       <button (click)="apply()" style="background: rgb(0,172,172);font-size: 100%">Apply</button>
                       <button (click)="reset()" style="background: rgb(0,172,172);font-size: 100%">Reset</button>
+                      <br><br><input style="text-align: center;" type="text" placeholder="search your college name" name="search" [(ngModel)]="searchbar">
+                      <button (click)="search()">search</button>
                   </div>
                 </div>
             </div>
@@ -55,7 +57,7 @@
     <div class="row courses_row">
 
       <!-- Course -->
-      <div *ngFor = "let list of universitydata"class="col-lg-4 course_col">
+      <div *ngFor = "let list of finaldata"class="col-lg-4 course_col">
         <div class="course">
           <div class="course_image"><img src="{{list.imageUrl}}" alt=""></div>
           <div class="course_body">

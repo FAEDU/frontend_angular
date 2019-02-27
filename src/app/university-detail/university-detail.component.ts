@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../services/common.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-university-detail',
@@ -9,25 +10,26 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UniversityDetailComponent implements OnInit {
   response :any;
+  parameter:any;
   universityData:any;
-  public imageurl;
-  constructor(private commonService : CommonService, private route: ActivatedRoute) { }
+  constructor(private http:HttpClient,private commonService : CommonService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params.subscribe( (params) =>{
+       this.parameter = params;
+      console.log(params) ;
+      this.http.get(`https://secret-atoll-46665.herokuapp.com/universityclicked/${this.parameter.id}`).subscribe(res=>{
+      console.log(res);
+    })
+    } );
+    
+    console.log('yes')
     this.getUniversities();
   }
 
   getUniversities()
   {
-    this.imageurl=this.route.snapshot.paramMap.get('image');
-    console.log(this.imageurl);
-    var parameter;
-    this.route.params.subscribe( (params) =>{
-       parameter = params;
-      console.log(params) ;
-    } );
-     
-    this.commonService.getUniversityData(parameter.id).subscribe((result)=>{
+    this.commonService.getUniversityData(this.parameter.id).subscribe((result)=>{
      this.response  =  result;
       this.universityData = this.response;
       console.log(this.universityData);
