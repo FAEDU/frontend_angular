@@ -46,11 +46,21 @@ export class EventsComponent implements OnInit {
     console.log(day,month,year);
     var sum=day+month+year;
     console.log(sum);
+    // var y=this.events.filter(i=>{
+    //   var date=i.Date;
+    //   var isum=parseInt(date.split('-')[0])+parseInt(date.split('-')[1])+parseInt(date.split('-')[2])
+    //   if(isum >= sum)
+    //     return i;
+    // })
     var y=this.events.filter(i=>{
       var date=i.Date;
-      var isum=parseInt(date.split('-')[0])+parseInt(date.split('-')[1])+parseInt(date.split('-')[2])
-      if(isum >= sum)
+      //console.log(month,parseInt(date.split('-')[1]))
+      if(month<parseInt(date.split('-')[1]))
         return i;
+      else if(month === parseInt(date.split('-')[1])){
+        if(day<parseInt(date.split('-')[2]))
+          return i;
+      }
     })
     console.log(y);
     this.events=y;

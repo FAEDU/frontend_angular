@@ -8,6 +8,7 @@ import { LoaderService } from '../services/common.service';
 })
 export class BlogComponent implements OnInit {
   showPage: boolean  = false;
+  showremaining:boolean=false;
   constructor(private loaderService: LoaderService) { }
 
   ngOnInit() {
@@ -16,6 +17,14 @@ export class BlogComponent implements OnInit {
      this.showPage = true
      this.loaderService.display(false);
     },400);
+  }
+
+  show(){
+    console.log("yes");
+    if(this.showremaining)
+      this.showremaining=false;
+    else
+      this.showremaining=true;
   }
 
 }

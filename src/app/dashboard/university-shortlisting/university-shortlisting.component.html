@@ -103,11 +103,15 @@
                                         <option value=20000>>20,000</option>
                                         <option value=10000>>10,000</option>
                                     </select>
-                                </div><br><br>
+                                </div>
+                                <br><br>
+
                             
                                  <button style="padding:0 1%;background-color: rgb(0,172,172)" (click)="reset()">Reset</button>
-                                 <button style="padding:0 1%;background-color: rgb(0, 172, 172);justify-content: right;" (click)="applyfilter()">Apply Filter</button>      
-                          </div>
+                                 <button style="padding:0 1%;background-color: rgb(0, 172, 172);justify-content: right;" (click)="applyfilter()">Apply Filter</button>
+                                 
+                                 <input name="search" [(ngModel)]="searchbar" style="margin-left:4%;margin-right:3%;text-align: center" type="text"><button (click)="search()">search</button>
+                          </div><br>
                       </div>
               
                     </div>

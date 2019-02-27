@@ -33,6 +33,10 @@ export class UniversityDetailComponent implements OnInit {
       console.log(this.universityData);
     });
   }
+
+  search(){
+    console.log('yes');
+  }
   
 
 }

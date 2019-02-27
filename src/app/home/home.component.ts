@@ -15,6 +15,7 @@ declare var $ :any;
 export class HomeComponent implements OnInit {
   showPage : boolean = false;
   public response;
+  public eemail='';
   public response2;
   public desc;public Name;public time;public date;
   public events=[];
@@ -106,13 +107,18 @@ export class HomeComponent implements OnInit {
     var month=mv[0].v;
     console.log(day,month,year);
     var sum=day+month+year;
-    console.log(sum);
+    //console.log(sum);
     this.finalevents=res.filter(i=>{
       var date=i.Date;
-      var isum=parseInt(date.split('-')[0])+parseInt(date.split('-')[1])+parseInt(date.split('-')[2])
-      if(isum >= sum)
+      console.log(month,parseInt(date.split('-')[1]))
+      if(month<parseInt(date.split('-')[1]))
         return i;
+      else if(month === parseInt(date.split('-')[1])){
+        if(day<parseInt(date.split('-')[2]))
+          return i;
+      }
     })
+    console.log(this.finalevents)
     var len=this.finalevents.length;
     //console.log(this.finalevents[len-1]);
     if(this.finalevents[len-1]){
@@ -163,6 +169,18 @@ export class HomeComponent implements OnInit {
     this.time=time;
     this.date=date;
     console.log(desc,name);
+  }
+
+  register(){
+    console.log(this.eemail)
+    if(this.eemail === ""){
+      alert("Enter your email id!");
+      return ;
+    }
+    this.commonService.eventregister(this.eemail,this.Name).subscribe(res=>{
+      console.log(res);
+      alert('You have successfully regsitered');
+    })
   }
 
 }

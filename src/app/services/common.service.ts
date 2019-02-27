@@ -171,6 +171,9 @@ export class CommonService {
     {
         return this.http.get(AppSettings.MentorRegistration);   
     }
+    eventregister(email,name){
+        return this.http.get(`https://secret-atoll-46665.herokuapp.com/event_reg/${email}/${name}`)
+    }
 
     removejscssfile(filename, filetype){
         var targetelement=(filetype=="js")? "script" : (filetype=="css")? "link" : "none" //determine element type to create nodelist from

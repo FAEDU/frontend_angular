@@ -21,6 +21,7 @@ export class UniversityShortlistingComponent implements OnInit {
   }
 
   public who=false;
+  public searchbar='';
   public name;
   public test;
   universityData = [];
@@ -174,7 +175,8 @@ export class UniversityShortlistingComponent implements OnInit {
     this.toeflfilter="";
     this.fees="";
     this.ieltsfilter="";
-    this.filtereduniversity=this.universityData
+    this.filtereduniversity=this.universityData;
+    this.searchbar='';
   }
 
   //filteration is happening
@@ -246,6 +248,17 @@ export class UniversityShortlistingComponent implements OnInit {
     }
    })
    return t;
+  }
+
+  search(){
+    console.log(this.searchbar);
+    if(this.searchbar === '')
+      return;
+    this.filtereduniversity=this.universityData.filter(i=>{
+      if(i.name.toLowerCase() === this.searchbar.toLowerCase())
+        return i;
+    })
+    console.log(this.filtereduniversity);
   }
   
  
